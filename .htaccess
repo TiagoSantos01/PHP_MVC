@@ -1,0 +1,14 @@
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^((?!index\.php).+)$ index.php [L]
+RewriteEngine Off
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -d 
+RewriteRule ^((?!index\.php).+)$ index.php [L]
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^((?!index\.php).+)$ index.php [L]
